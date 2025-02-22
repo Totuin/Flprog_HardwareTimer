@@ -17,13 +17,13 @@
 
 #ifndef CONTROL_PIN
 #ifdef RT_HW_CORE_ESP8266
-#define CONTROL_PIN 5  //D1
+#define CONTROL_PIN 5 // D1
 #endif
 #endif
 
 #ifndef CONTROL_PIN
 #ifdef RT_HW_CORE_ESP32
-#define CONTROL_PIN 2 
+#define CONTROL_PIN 2
 #endif
 #endif
 

@@ -40,6 +40,10 @@ void initFlprogSystemTimerParametrs()
 
 void setFlprogSystemTimerTickPeriod(uint32_t period)
 {
+    if (flprogSystemTickPeriod == period)
+    {
+        return;
+    }
     uint32_t temp = period;
     if (temp < 10)
     {
@@ -58,6 +62,7 @@ void setFlprogSystemTimerTickPeriod(uint32_t period)
 
 bool privateSetFlprogSystemTimerTickPeriod(uint32_t period)
 {
+
     uint32_t offset = (uint32_t)((16 * period) / flprogSystemPrescaler);
     if (offset > 65535)
     {
@@ -96,7 +101,6 @@ ISR(TIMER1_OVF_vect)
         flprogSystemTimerHandler();
     }
 }
-
 
 uint32_t getFlprogSystemTimerTickPeriod()
 {

@@ -25,6 +25,10 @@ void initFlprogSystemTimerParametrs()
 
 void setFlprogSystemTimerTickPeriod(uint32_t period)
 {
+    if (flprogSystemTickPeriod == period)
+    {
+        return;
+    }
     uint32_t temp = period;
     if (temp < 10)
     {

@@ -15,6 +15,10 @@ void initFlprogSystemTimer(FLProgSystemHardwareTimerTickEvent func)
 
 void setFlprogSystemTimerTickPeriod(uint32_t period)
 {
+    if (flprogSystemTickPeriod == period)
+    {
+        return;
+    }
     uint32_t _period = period;
     if (_period < 10)
     {
