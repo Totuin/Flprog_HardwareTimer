@@ -96,4 +96,11 @@ ISR(TIMER1_OVF_vect)
         flprogSystemTimerHandler();
     }
 }
+
+
+uint32_t getFlprogSystemTimerTickPeriod()
+{
+    return flprogSystemTickPeriod;
+}
+
 #endif

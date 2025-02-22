@@ -57,4 +57,10 @@ bool privateSetFlprogSystemTimerTickPeriod(uint32_t period)
     flprogSystemTimerPresetValue = offset;
     return true;
 }
+
+uint32_t getFlprogSystemTimerTickPeriod()
+{
+    return flprogSystemTickPeriod;
+}
+
 #endif
