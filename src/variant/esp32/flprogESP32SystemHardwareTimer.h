@@ -4,10 +4,16 @@
 
 #ifdef RT_HW_CORE_ESP32
 
+#ifdef __GNUC__
+#define VARIABLE_IS_NOT_USED __attribute__((unused))
+#else
+#define VARIABLE_IS_NOT_USED
+#endif
+
 typedef void (*FLProgSystemHardwareTimerTickEvent)();
-static FLProgSystemHardwareTimerTickEvent flprogSystemTimerHandler = 0;
-static uint32_t flprogSystemTickPeriod = 10;
-static hw_timer_t *FLProgSystemHardwareTimer = 0;
+static FLProgSystemHardwareTimerTickEvent VARIABLE_IS_NOT_USED flprogSystemTimerHandler = 0;
+static uint32_t VARIABLE_IS_NOT_USED flprogSystemTickPeriod = 10;
+static hw_timer_t VARIABLE_IS_NOT_USED *FLProgSystemHardwareTimer = 0;
 void IRAM_ATTR flprogSystemTimerOnTimer();
 
 // public

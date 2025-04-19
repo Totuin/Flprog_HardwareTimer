@@ -6,13 +6,19 @@
 
 #include <HardwareTimer.h>
 
-static callback_function_t flprogSystemTimerHandler = 0;
-static uint32_t flprogSystemTickPeriod = 10;
-static uint32_t flprogSystemTimerPresetValue = 10;
-static uint32_t flprogSystemTimerOneMicrosPrescaler;
-static uint16_t flprogSystemPrescaler = 1;
+#ifdef __GNUC__
+#define VARIABLE_IS_NOT_USED __attribute__((unused))
+#else
+#define VARIABLE_IS_NOT_USED
+#endif
 
-static HardwareTimer FLProgSystemHardwareTimer(TIM2);
+static callback_function_t VARIABLE_IS_NOT_USED flprogSystemTimerHandler = 0;
+static uint32_t VARIABLE_IS_NOT_USED flprogSystemTickPeriod = 10;
+static uint32_t VARIABLE_IS_NOT_USED flprogSystemTimerPresetValue = 10;
+static uint32_t VARIABLE_IS_NOT_USED flprogSystemTimerOneMicrosPrescaler;
+static uint16_t VARIABLE_IS_NOT_USED flprogSystemPrescaler = 1;
+
+static HardwareTimer VARIABLE_IS_NOT_USED FLProgSystemHardwareTimer(TIM2);
 
 // public
 void initFlprogSystemTimer(callback_function_t func);

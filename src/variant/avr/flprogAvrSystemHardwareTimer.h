@@ -4,12 +4,19 @@
 
 #ifdef RT_HW_CORE_AVR
 
-typedef void (*FLProgSystemHardwareTimerTickEvent)();
-static uint32_t flprogSystemTickPeriod = 10;
-static FLProgSystemHardwareTimerTickEvent flprogSystemTimerHandler = 0;
+#ifdef __GNUC__
+#define VARIABLE_IS_NOT_USED __attribute__ ((unused))
+#else
+#define VARIABLE_IS_NOT_USED
+#endif
 
-static uint32_t flprogSystemTimerPresetValue = 65375;
-static uint16_t flprogSystemPrescaler = 1;
+typedef void (*FLProgSystemHardwareTimerTickEvent)();
+static uint32_t VARIABLE_IS_NOT_USED flprogSystemTickPeriod;
+
+static FLProgSystemHardwareTimerTickEvent VARIABLE_IS_NOT_USED flprogSystemTimerHandler = 0;
+
+static uint32_t VARIABLE_IS_NOT_USED flprogSystemTimerPresetValue = 65375;
+static uint16_t  VARIABLE_IS_NOT_USED flprogSystemPrescaler = 1;
 
 // public
 void initFlprogSystemTimer(FLProgSystemHardwareTimerTickEvent func);
